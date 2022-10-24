@@ -90,6 +90,10 @@ const upperCasedCharacters = [
   "Z",
 ];
 
+// minimum characters 8, max 128.
+// select length and what type of characters to include
+// do so in  a series of prompts. at least 1 character type must be chosen
+// display generated password in alert or written to the page (in the box)
 function generatePassword() {
   // TODO: Write your code here
 }
