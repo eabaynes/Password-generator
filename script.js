@@ -95,7 +95,7 @@ const upperCasedCharacters = [
 // do so in  a series of prompts. at least 1 character type must be chosen
 // display generated password in alert or written to the page (in the box)
 function generatePassword() {
-  // TODO: if users enter a value  between 8 and 128 add prompt for lowercase
+  // TODO: math funct to pull random array values for password
 let lengthNum = Number(prompt('How long do you want your password?'));
 
 if (lengthNum<129 && lengthNum>7) {
