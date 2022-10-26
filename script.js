@@ -95,9 +95,10 @@ const upperCasedCharacters = [
 // do so in  a series of prompts. at least 1 character type must be chosen
 // display generated password in alert or written to the page (in the box)
 function generatePassword() {
-  // TODO:
-prompt('How long do you want your password?')
+  // TODO: users enter a value between 8 and 128
+const length = prompt('How long do you want your password?');
 
+if 
 }
 
 // Write password to the #password input
