@@ -95,11 +95,17 @@ const upperCasedCharacters = [
 // do so in  a series of prompts. at least 1 character type must be chosen
 // display generated password in alert or written to the page (in the box)
 function generatePassword() {
-  // TODO: users enter a value between 8 and 128
-const length = prompt('How long do you want your password?');
+  // TODO: if users enter a value  between 8 and 128, say hi
+let lengthNum = Number(prompt('How long do you want your password?'));
 
-if 
+if (lengthNum<129 && lengthNum>7) {
+  console.log("hi")
+} else { 
+  return "Error: Password must be Between 8 and 128 Characters"
 }
+
+}
+
 
 // Write password to the #password input
 function writePassword() {
