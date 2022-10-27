@@ -95,7 +95,7 @@ const upperCasedCharacters = [
 // do so in  a series of prompts. at least 1 character type must be chosen
 // display generated password in alert or written to the page (in the box)
 function generatePassword() {
-  // TODO: try changing confirm boxes to prompts?
+  // TODO: 
 let lengthNum = Number(prompt('How long do you want your password?'));
 
 if (lengthNum<129 && lengthNum>7) {
@@ -104,20 +104,24 @@ if (lengthNum<129 && lengthNum>7) {
   const nums = confirm("Use numbers in password?")
   const specChar = confirm("Use special characters in password?")
 
-if (lowerCase){
+if (lowerCase === true){
   console.log('yeslower')
 }
 
-if (upperCase) {
+if (upperCase === true) {
   console.log('yesupper')
 }
 
-if (nums) {
+if (nums === true) {
   console.log('yesnums')
 }
 
-if (specChar) {
+if (specChar === true) {
   console.log('yesspecchar')
+}
+
+if (lowerCase === false, upperCase === false, nums === false, specChar === false) {
+  return "Error: Select at least 1 character type"
 }
 
 } if (lengthNum>=129 || lengthNum<=7) { 
