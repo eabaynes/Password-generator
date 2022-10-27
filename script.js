@@ -96,6 +96,8 @@ const upperCasedCharacters = [
 // display generated password in alert or written to the page (in the box)
 function generatePassword() {
   // TODO: 
+let passwordArray = [];
+
 let lengthNum = Number(prompt('How long do you want your password?'));
 
 if (lengthNum<129 && lengthNum>7) {
@@ -105,28 +107,29 @@ if (lengthNum<129 && lengthNum>7) {
   const specChar = confirm("Use special characters in password?")
 
 if (lowerCase === true){
-  // if yes, add lowercase to password array
-  console.log('yeslower')
-}
+  // if yes, add lowercase to password array (using copyOf?)
+  passwordArray.push(lowerCasedCharacters);
+};
 
 if (upperCase === true) {
   // if yes, add uppercase to password array
-  console.log('yesupper')
-}
+  passwordArray.push(upperCasedCharacters)
+};
 
 if (nums === true) {
   // if yes, add numbers to password array
-  console.log('yesnums')
-}
+  passwordArray.push(numericCharacters)
+};
 
 if (specChar === true) {
   // if yes, add special characters to password array
-  console.log('yesspecchar')
-}
+  passwordArray.push(specialCharacters)
+};
 
+console.log(passwordArray);
 // 
-let passwordArray = [undefined]
-// extract a # of items in array = lengthNum
+
+// extract a # of random items in password array lengthNum
 // shuffle those items
 // return that as password
 
