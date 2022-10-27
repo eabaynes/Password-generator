@@ -99,45 +99,13 @@ function generatePassword() {
 let lengthNum = Number(prompt('How long do you want your password?'));
 
 if (lengthNum<129 && lengthNum>7) {
-  let lowerCase = confirm("Use lowercase letters in password?")
-  let upperCase = confirm("Use uppercase letters in password?")
-  let nums = confirm("Use numbers in password?")
-  let specChar = confirm("Use special characters in password?")
+  const lowerCase = confirm("Use lowercase letters in password?")
+  const upperCase = confirm("Use uppercase letters in password?")
+  const nums = confirm("Use numbers in password?")
+  const specChar = confirm("Use special characters in password?")
 
 } if (lengthNum>=129 || lengthNum<=7) { 
   return "Error: Password must be Between 8 and 128 Characters"
-}
-
-if (lowerCase = true) {
-  console.log('lower')
-}
-
-if (lowerCase = false) {
-  console.log('nolower')
-}
-
-if (upperCase = true) {
-  console.log('upper')
-}
-
-if (upperCase = false) {
-  console.log('noupper')
-}
-
-if (nums = true) {
-  console.log('nums')
-}
-
-if (nums = false) {
-  console.log('nonums')
-}
-
-if (specChar = true) {
-  console.log('specChar')
-}
-
-if (specChar = false) {
-  console.log('nonums')
 }
 
 }
