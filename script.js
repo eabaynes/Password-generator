@@ -105,20 +105,30 @@ if (lengthNum<129 && lengthNum>7) {
   const specChar = confirm("Use special characters in password?")
 
 if (lowerCase === true){
+  // if yes, add lowercase to password array
   console.log('yeslower')
 }
 
 if (upperCase === true) {
+  // if yes, add uppercase to password array
   console.log('yesupper')
 }
 
 if (nums === true) {
+  // if yes, add numbers to password array
   console.log('yesnums')
 }
 
 if (specChar === true) {
+  // if yes, add special characters to password array
   console.log('yesspecchar')
 }
+
+// 
+let passwordArray = [undefined]
+// extract a # of items in array = lengthNum
+// shuffle those items
+// return that as password
 
 if (lowerCase === false, upperCase === false, nums === false, specChar === false) {
   return "Error: Select at least 1 character type"
