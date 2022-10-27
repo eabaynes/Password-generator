@@ -104,6 +104,22 @@ if (lengthNum<129 && lengthNum>7) {
   const nums = confirm("Use numbers in password?")
   const specChar = confirm("Use special characters in password?")
 
+if (lowerCase){
+  console.log('yeslower')
+}
+
+if (upperCase) {
+  console.log('yesupper')
+}
+
+if (nums) {
+  console.log('yesnums')
+}
+
+if (specChar) {
+  console.log('yesspecchar')
+}
+
 } if (lengthNum>=129 || lengthNum<=7) { 
   return "Error: Password must be Between 8 and 128 Characters"
 }
