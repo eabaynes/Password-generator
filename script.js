@@ -90,6 +90,9 @@ const upperCasedCharacters = [
   "Z",
 ];
 
+function passwordChars (passwordArray) {
+  return passwordArray[Math.floor(Math.random()*lengthNum)];
+}
 // minimum characters 8, max 128.
 // select length and what type of characters to include
 // do so in  a series of prompts. at least 1 character type must be chosen
@@ -129,6 +132,9 @@ if (specChar === true) {
 console.log(passwordArray);
 // 
 
+// run loop to pick 1 character from each until password is full?
+// pseudo loop for (i=0, i<=lengthNum, i++) {console.log} <-- for loop to pull values individuals 
+// return passwordArray
 // extract a # of random items in password array lengthNum
 // shuffle those items
 // return that as password
