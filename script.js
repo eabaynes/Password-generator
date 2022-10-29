@@ -141,6 +141,7 @@ for( let i=0; i<lengthNum; i++) {
   password += randomArr(randomArr(passwordArray))
 }
 
+// randomized function taken from https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array
 function shuffle(array) {
   let currentIndex = array.length,  randomIndex;
 
@@ -159,11 +160,6 @@ function shuffle(array) {
   return array;
 }
 
-const shufflePassword = shuffle(Array.from(password));
-
-return shufflePassword.join('');
-
-
 if (lowerCase === false && upperCase === false && nums === false && specChar === false) {
   return "Error: Select at least 1 character type"
 }
@@ -171,6 +167,11 @@ if (lowerCase === false && upperCase === false && nums === false && specChar ===
 } if (lengthNum>=129 || lengthNum<=7) { 
   return "Error: Password must be Between 8 and 128 Characters"
 }
+
+
+const shufflePassword = shuffle(Array.from(password));
+
+return shufflePassword.join('');
 }
 
 
