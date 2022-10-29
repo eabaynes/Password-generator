@@ -90,8 +90,8 @@ const upperCasedCharacters = [
   "Z",
 ];
 
-function passwordChars (passwordArray) {
-  return passwordArray[Math.floor(Math.random()*lengthNum)];
+function randomArr(passwordArray) {
+  return passwordArray[Math.floor(Math.random() * passwordArray.length)];
 }
 // minimum characters 8, max 128.
 // select length and what type of characters to include
@@ -100,6 +100,7 @@ function passwordChars (passwordArray) {
 function generatePassword() {
   // TODO: 
 let passwordArray = [];
+let password= '';
 
 let lengthNum = Number(prompt('How long do you want your password?'));
 
@@ -129,23 +130,35 @@ if (specChar === true) {
   passwordArray.push(specialCharacters)
 };
 
-console.log(passwordArray);
-// 
+console.log(passwordArray)
 
-// run loop to pick 1 character from each until password is full?
-// pseudo loop for (i=0, i<=lengthNum, i++) {console.log} <-- for loop to pull values individuals 
-// return passwordArray
-// extract a # of random items in password array lengthNum
-// shuffle those items
-// return that as password
+console.log(randomArr(passwordArray))
 
-if (lowerCase === false, upperCase === false, nums === false, specChar === false) {
+console.log(randomArr(randomArr(passwordArray)))
+// if lowercase or uppercase or nums or specchar === true, generate password 
+for( let i=0; i<lengthNum; i++) {
+
+}
+// to generate final password:
+// go in to index 0 in passwordArray
+// pull one random index value
+// go in to index 1 in passwordArray
+// pull one randon value
+// pull random from index 2
+// pull random from index 3
+// repeat until lengthNum is reached
+// concat values retrieved into 
+// shuffle
+// return password
+
+if (lowerCase === false && upperCase === false && nums === false && specChar === false) {
   return "Error: Select at least 1 character type"
 }
 
 } if (lengthNum>=129 || lengthNum<=7) { 
   return "Error: Password must be Between 8 and 128 Characters"
 }
+
 
 }
 
