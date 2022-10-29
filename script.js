@@ -90,40 +90,54 @@ const upperCasedCharacters = [
   "Z",
 ];
 
+// function to pull a random element from the password array
 function randomArr(passwordArray) {
   return passwordArray[Math.floor(Math.random() * passwordArray.length)];
 }
 
+// function to generate password
 function generatePassword() {
-  // TODO: 
+
+  // establish array to send chosen character arrays
 let passwordArray = [];
+// string to dump chosen characters
 let password= '';
 
+// establish variable for password length and determine value via user input
 let lengthNum = Number(prompt('How long do you want your password?'));
 
+// establish valid password lenfth rules
 if (lengthNum<129 && lengthNum>7) {
+  // user input for which characters should be included in password
   const lowerCase = confirm("Use lowercase letters in password?")
   const upperCase = confirm("Use uppercase letters in password?")
   const nums = confirm("Use numbers in password?")
   const specChar = confirm("Use special characters in password?")
 
+  // establish rules and return for invalid character type selection
+  if (lowerCase === false && upperCase === false && nums === false && specChar === false) {
+    return "Error: Select at least 1 character type"
+  }
+
+  // check booleans for which arrays to add to array of possible password characters
+
 if (lowerCase === true){
-  // if yes, add lowercase to password array (using copyOf?)
+  // if true, add lowercase to password array
   passwordArray.push(lowerCasedCharacters);
 };
 
 if (upperCase === true) {
-  // if yes, add uppercase to password array
+  // if true, add uppercase to password array
   passwordArray.push(upperCasedCharacters)
 };
 
 if (nums === true) {
-  // if yes, add numbers to password array
+  // if true, add numbers to password array
   passwordArray.push(numericCharacters)
 };
 
 if (specChar === true) {
-  // if yes, add special characters to password array
+  // if true, add special characters to password array
   passwordArray.push(specialCharacters)
 };
 
@@ -133,11 +147,15 @@ console.log(randomArr(passwordArray))
 
 console.log(randomArr(randomArr(passwordArray)))
 
+// add initial loop to ensure at least one of each chosen character type is added to password
 for (i=0; i<passwordArray.length; i++) {
+  // call to random element function, inputting specific password array index
   password += randomArr(passwordArray[i])
 }
 
+// for remaining password length, fun for loop to fill with random elements from any chosen character array
 for( let i=0; i<lengthNum; i++) {
+  // call to random element function twice- first to determine character type, then to grab random element
   password += randomArr(randomArr(passwordArray))
 }
 
@@ -160,20 +178,17 @@ function shuffle(array) {
   return array;
 }
 
-if (lowerCase === false && upperCase === false && nums === false && specChar === false) {
-  return "Error: Select at least 1 character type"
-}
-
+// establish error return for password lengths that are not valid
 } if (lengthNum>=129 || lengthNum<=7) { 
   return "Error: Password must be Between 8 and 128 Characters"
 }
 
-
+// create variable to convert and store the elements dumped into password as an array, and run the shuffle function on it 
 const shufflePassword = shuffle(Array.from(password));
 
+// return the shuffled password array to the screen as a joined string
 return shufflePassword.join('');
 }
-
 
 // Write password to the #password input
 function writePassword() {
