@@ -135,10 +135,37 @@ console.log(passwordArray)
 console.log(randomArr(passwordArray))
 
 console.log(randomArr(randomArr(passwordArray)))
-// if lowercase or uppercase or nums or specchar === true, generate password 
-for( let i=0; i<lengthNum; i++) {
 
+for (i=0; i<passwordArray.length; i++) {
+  password += randomArr(passwordArray[i])
 }
+
+for( let i=0; i<lengthNum; i++) {
+  password += randomArr(randomArr(passwordArray))
+}
+
+function shuffle(array) {
+  let currentIndex = array.length,  randomIndex;
+
+  // While there remain elements to shuffle.
+  while (currentIndex != 0) {
+
+    // Pick a remaining element.
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex--;
+
+    // And swap it with the current element.
+    [array[currentIndex], array[randomIndex]] = [
+      array[randomIndex], array[currentIndex]];
+  }
+
+  return array;
+}
+
+const shufflePassword = shuffle(Array.from(password));
+
+return shufflePassword.join('');
+
 // to generate final password:
 // go in to index 0 in passwordArray
 // pull one random index value
@@ -173,21 +200,4 @@ function writePassword() {
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
-// when clicked, pop prompt for input value
-// input must be between 8 and 128
-// if too short or long, return error message
-// when valid number is entered
-// pop up asking Y/N for lower case
-// if yes, concat lower case
-// if no, omit
-// pop up asking Y/N for nums
-// if yes, concat nums
-// if no, omit
-// pop up asking Y/N for specChar
-// if yes, concat specChar
-// if no, omit
-// pop up asking Y/N for upper case
-// if yes, concat upper case
-// if no, omit
-// pull random array values based on Y/N to concat
-// ouput concat(ed) password in text box
+ 
