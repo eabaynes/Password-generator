@@ -93,10 +93,7 @@ const upperCasedCharacters = [
 function randomArr(passwordArray) {
   return passwordArray[Math.floor(Math.random() * passwordArray.length)];
 }
-// minimum characters 8, max 128.
-// select length and what type of characters to include
-// do so in  a series of prompts. at least 1 character type must be chosen
-// display generated password in alert or written to the page (in the box)
+
 function generatePassword() {
   // TODO: 
 let passwordArray = [];
@@ -166,17 +163,6 @@ const shufflePassword = shuffle(Array.from(password));
 
 return shufflePassword.join('');
 
-// to generate final password:
-// go in to index 0 in passwordArray
-// pull one random index value
-// go in to index 1 in passwordArray
-// pull one randon value
-// pull random from index 2
-// pull random from index 3
-// repeat until lengthNum is reached
-// concat values retrieved into 
-// shuffle
-// return password
 
 if (lowerCase === false && upperCase === false && nums === false && specChar === false) {
   return "Error: Select at least 1 character type"
@@ -185,8 +171,6 @@ if (lowerCase === false && upperCase === false && nums === false && specChar ===
 } if (lengthNum>=129 || lengthNum<=7) { 
   return "Error: Password must be Between 8 and 128 Characters"
 }
-
-
 }
 
 
