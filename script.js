@@ -155,7 +155,7 @@ for (i=0; i<passwordArray.length; i++) {
 
 // for remaining password length, fun for loop to fill with random elements from any chosen character array
 for( let i=0; i<lengthNum; i++) {
-  // call to random element function twice- first to determine character type, then to grab random element
+  // call to random element function twice- first to determine character type, then to grab random character element
   password += randomArr(randomArr(passwordArray))
 }
 
