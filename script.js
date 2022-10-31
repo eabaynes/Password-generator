@@ -104,13 +104,10 @@ let passwordArray = [];
 let password= '';
 
 // establish variable for password length and determine value via user input
-let lengthNum = Number(prompt('How long do you want your password?'));
+let lengthNum = prompt('How long do you want your password?');
 
 
-// establish error return for password lengths that are not valid
-} if (lengthNum>=129 || lengthNum<=7) { 
-  return "Error: Password must be Between 8 and 128 Characters"
-}
+
 
 // establish valid password lenfth rules
 if (lengthNum<129 && lengthNum>7) {
@@ -154,7 +151,7 @@ for (i=0; i<passwordArray.length; i++) {
 }
 
 // for remaining password length, fun for loop to fill with random elements from any chosen character array
-for( let i=0; i<lengthNum; i++) {
+for( let i=0; i<lengthNum-passwordArray.length; i++) {
   // call to random element function twice- first to determine character type, then to grab random character element
   password += randomArr(randomArr(passwordArray))
 }
@@ -176,6 +173,11 @@ function shuffle(array) {
   }
 
   return array;
+}
+
+// establish error return for password lengths that are not valid
+} if (lengthNum>=129 || lengthNum<=7) { 
+  return "Error: Password must be Between 8 and 128 Characters"
 }
 
 // create variable to convert and store the elements dumped into password as an array, and run the shuffle function on it 
